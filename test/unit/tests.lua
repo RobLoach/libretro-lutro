@@ -39,6 +39,13 @@ function lutro.filesystem.getUserDirectoryTest()
 	unit.assertEquals(homeDir, luaHomeDir)
 end
 
+function lutro.filesystem.getWorkingDirectoryTest()
+	local cwd = lutro.filesystem.getWorkingDirectory()
+	local lfs = require('lfs')
+	local lfscwd = lfs.currentdir()
+	unit.assertEquals(cwd, lfscwd)
+end
+
 -- Runs all the defined tests.
 function runTests()
 	lutro.filesystem.getUserDirectoryTest()
