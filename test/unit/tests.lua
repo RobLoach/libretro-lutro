@@ -51,6 +51,7 @@ function runTests()
 	lutro.filesystem.getUserDirectoryTest()
 	lutro.math.randomTest()
 	lutro.math.setRandomSeedTest()
+	lutro.filesystem.getWorkingDirectoryTest()
 	UTF8Test()
 end
 

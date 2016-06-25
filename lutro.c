@@ -25,6 +25,7 @@
 #endif
 
 #include "deps/luautf8/lutf8lib.h"
+#include "deps/luafilesystem/src/lfs.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -250,6 +251,7 @@ void lutro_init()
 #ifdef HAVE_INOTIFY
    lutro_require(L, "lutro.live", 1);
 #endif
+   luaopen_lfs(L);
 
    lutro_checked_stack_assert(0);
 }
