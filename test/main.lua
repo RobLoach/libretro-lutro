@@ -1,5 +1,6 @@
 -- Lutro Tester
 local availableStates = {
+	"window/showMessageBox",
 	"graphics/print",
 	"unit/tests",
 	"joystick/isDown",

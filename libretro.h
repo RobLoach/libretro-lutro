@@ -1920,6 +1920,7 @@ void *retro_get_memory_data(unsigned id);
 size_t retro_get_memory_size(unsigned id);
 
 void retro_shutdown_game(void);
+retro_environment_t retro_get_environment();
 
 #ifdef __cplusplus
 }

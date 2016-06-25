@@ -126,6 +126,11 @@ void retro_set_environment(retro_environment_t cb)
 
 }
 
+retro_environment_t retro_get_environment()
+{
+   return environ_cb;
+}
+
 void retro_set_audio_sample(retro_audio_sample_t cb)
 {
    audio_cb = cb;

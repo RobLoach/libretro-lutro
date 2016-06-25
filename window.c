@@ -14,6 +14,7 @@ int lutro_window_preload(lua_State *L)
       { "setMode",  win_setMode },
       { "setIcon", win_setIcon },
       { "isCreated", win_isCreated },
+      { "showMessageBox", win_showMessageBox },
       {NULL, NULL}
    };
 
@@ -92,6 +93,27 @@ int win_isCreated(lua_State *L)
       return luaL_error(L, "lutro.window.isCreated expects 0 arguments, %d given.", n);
 
    // The window will always be created in libretro.
+   lua_pushboolean(L, true);
+
+   return 1;
+}
+
+/**
+ * lutro.window.showMessageBox
+ *
+ * https://love2d.org/wiki/love.window.showMessageBox
+ */
+int win_showMessageBox(lua_State *L)
+{
+   int n = lua_gettop(L);
+
+   if (n < 2)
+      return luaL_error(L, "lutro.window.isCreated expects >= 2 arguments, %d given.", n);
+
+   retro_environment_t environ_cb = retro_get_environment();
+   environ_cb(RETRO_ENVIRONMENT_SET_MESSAGE, "fdsafasdfsda");
+
+   // Success.
    lua_pushboolean(L, true);
 
    return 1;
